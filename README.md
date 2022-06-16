@@ -26,6 +26,7 @@ Your implementation should meet the following requirements:
 - Choose ***only one*** of the following requirements:
     - Improve the accessibility of the landing page.
     - Write your code in TypeScript.
+    - Add pagination to blog list component.
     - Do something else that shows off your skills! (If you choose this option, explain in your README why this is a valuable addition.)
     
 
