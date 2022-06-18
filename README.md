@@ -2,7 +2,7 @@
 
 ## Digital Marketing
 
-Via is implementing a Digital Marketing strategy that involves several landing pages served by a headless CMS. Your job for this test is to develop the landing page from the Figma file taking in consideration SEO good practices.
+Via is implementing a Digital Marketing strategy that involves several landing pages served by a headless CMS. Your job for this test is to develop the landing page from a Figma file taking in consideration Web development good practices (Responsiveness, SEO, Performance, Accessibility).
 
 ## Guidelines
 
@@ -25,8 +25,8 @@ Your implementation should meet the following requirements:
 - Gracefully handle errors that come back from the API.
 - Choose ***only one*** of the following requirements:
     - Improve the accessibility of the landing page.
-    - Write your code in TypeScript.
     - Add pagination to blog list component.
+    - Write your code in TypeScript.
     - Do something else that shows off your skills! (If you choose this option, explain in your README why this is a valuable addition.)
     
 
@@ -45,7 +45,7 @@ Your goal is to finish as much of this as you can in the time that you have!
 
 Our engineering team has already built an endpoint (**/api/blog**) that you can use to read the blog data. Unfortunately, the endpoint isn't super reliable. Sometimes, things go wrong on the server, and requests will return a 500 error code. In that case, the response will look something like this:
 
-- Blog API endpoint (LINK)
+- [Blog API endpoint](https://strapi-jhve.onrender.com/api/blog-posts)
 
 ### Our marketing team goals
 
