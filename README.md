@@ -43,7 +43,7 @@ Your goal is to finish as much of this as you can in the time that you have!
 
 ### Blog Posts API endpoint
 
-Our engineering team has already built an endpoint (**/api/blog**) that you can use to read the blog data. Unfortunately, the endpoint isn't super reliable. Sometimes, things go wrong on the server, and requests will return a 500 error code. In that case, the response will look something like this:
+Our engineering team has already built an endpoint (**/api/blog-posts**) that you can use to read the blog data. Unfortunately, the endpoint isn't super reliable. Sometimes, things go wrong on the server, and requests will return a 500 error code. In that case, the response will look something like this:
 
 - [Blog API endpoint](https://strapi-jhve.onrender.com/api/blog-posts)
 
