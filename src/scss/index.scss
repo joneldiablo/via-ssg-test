@@ -1,0 +1,17 @@
+$primary: #2877f4;
+$secondary: #202b33;
+$card-border-radius: .5rem;
+$small-font-size: .75em;
+
+
+$min-contrast-ratio: 4.0;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~dbl-components/lib/scss/style";
+@import "./app";
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}

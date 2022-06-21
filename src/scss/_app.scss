@@ -1,0 +1,71 @@
+.nav-secondary {
+  $nav-link-hover-color: lighten($secondary, 20%);
+  $nav-link-disabled-color: rgba($secondary, .6);
+
+  .nav-link {
+    color: $secondary;
+
+    &:hover,
+    &:focus {
+      color: $nav-link-hover-color;
+    }
+
+    // Disabled state lightens text
+    &.disabled {
+      color: $nav-link-disabled-color;
+    }
+  }
+}
+
+@mixin bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero {
+  background-image: url(./images/hero.png);
+  @include bg;
+  background-position: center calc(50% + 50px);
+  background-attachment: fixed;
+  height: calc(100vh - 102px);
+
+  #titleH1 {
+    max-width: 555px;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(0, 0, 0, .5), 0 0 10px rgba(0, 0, 0, .5);
+  }
+
+  #cardHero {
+    max-width: 360px;
+    margin: auto;
+  }
+}
+
+.aboutW-section {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  background-image: url(./images/lines.png);
+  @include bg;
+  background-position: center top;
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.call2Action-section {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  padding: 2rem;
+  background: radial-gradient(137.02% 854.1% at 0% 0%, #2877F4 12.52%, #289EF4 94.98%);
+  text-align: center;
+  color: $white;
+
+  #call2Action {
+    max-width: 555px;
+    margin: auto;
+  }
+}
