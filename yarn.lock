@@ -4335,8 +4335,8 @@ data-urls@^2.0.0:
 
 dbl-components@^1.2.45:
   version "1.2.45"
-  resolved "https://registry.yarnpkg.com/dbl-components/-/dbl-components-1.2.45.tgz#91b071539ae203a1df823b9b4ce312c13f8b9a88"
-  integrity sha512-ocLaqRLgbz+09crSaQYXow4umuHpRFGU0CGpj0q1j+J1LhMihFPVBFJ3BEFFapx05D35y3FNDP8K4oHZnI4GNg==
+  resolved "https://registry.yarnpkg.com/dbl-components/-/dbl-components-1.2.45.tgz#bc708effd8bc88f67f7ae55f87e7f17a56167ed0"
+  integrity sha512-ax3qffxBPGEN3zAuaEMyM94j+gMp8SeWy5d6p3G71I2stpARLJlSTmEenAjoJpevC1lQMeURtoH9HupV7yqWcg==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@splidejs/react-splide" "^0.4.4"
