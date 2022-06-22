@@ -17,6 +17,11 @@
   }
 }
 
+.py-items-0 .nav-link {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 @mixin bg {
   background-position: center;
   background-repeat: no-repeat;
@@ -67,5 +72,37 @@
   #call2Action {
     max-width: 555px;
     margin: auto;
+  }
+}
+
+.socialShare-section,
+.otherLinks-section {
+  position: sticky;
+  top: 115px;
+}
+
+.social {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  a {
+    color: $secondary;
+    $nav-link-hover-color: lighten($secondary, 20%);
+    $nav-link-disabled-color: rgba($secondary, .6);
+
+    &:hover,
+    &:focus {
+      color: $nav-link-hover-color;
+    }
+
+    // Disabled state lightens text
+    &.disabled {
+      color: $nav-link-disabled-color;
+    }
   }
 }

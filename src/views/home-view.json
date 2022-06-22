@@ -3,7 +3,12 @@
     "name": "header",
     "component": "GridContainer",
     "tag": "header",
-    "classes": "align-items-center py-2 px-4 shadow-sm nav-secondary sticky-top bg-white",
+    "classes": "--",
+    "colClasses": [
+      "col-auto",
+      "auto-xs-12 auto-sm-5 auto-md-5 auto-lg-6 auto-xl-7 auto-xxl-8",
+      "col-auto"
+    ],
     "content": {
       "logoW": {
         "name": "logoW",
@@ -18,8 +23,8 @@
         "name": "linksW",
         "component": "ListContainer",
         "classes": "nav justify-content-center",
-        "colClasses": "auto-xs-12 auto-sm-12 auto-md-6 auto-lg-6 auto-xl-7 auto-xxl-8",
         "liClasses": "nav-item",
+        "wrapper": "nav",
         "content": [
           {
             "name": "howItWorks",
@@ -73,6 +78,11 @@
             "content": "Talk to us"
           }
         ]
+      },
+      "menuMobile": {
+        "name": "menuMobile",
+        "component": "Action",
+        "content": "<Icons icon=menu></Icons>"
       }
     }
   },
@@ -87,7 +97,7 @@
           {
             "name": "titleH1",
             "tag": "h1",
-            "classes": "text-white text-center",
+            "classes": "text-white text-center mx-auto",
             "content": [
               "<span>Canada PEO</span>",
               "<span class='text-nowrap'> & Employer of Record</span>",
@@ -127,7 +137,7 @@
           "name": "aboutImg",
           "component": "Image",
           "src": "/assets/images/about.png",
-          "classes": "p-5",
+          "classes": "p-0 p-sm-5",
           "width": "100%"
         },
         {
@@ -142,9 +152,9 @@
   },
   "articlesW": {
     "tag": "section",
-    "classes": "container",
+    "classes": "container py-4",
     "content": {
-      "name": "articles",
+      "name": "articlesGrid",
       "component": "GridContainer",
       "colClasses": [
         "col-md-auto",
@@ -154,18 +164,54 @@
       "content": [
         {
           "name": "socialShare",
-          "classes": "flex-shrink-1",
-          "content": "nana"
+          "classes": "list-unstyled d-flex justify-content-center d-lg-block",
+          "colClasses": "flex-shrink-1",
+          "liClasses": "rounded-circle border shadow-sm social",
+          "component": "ListContainer",
+          "wrapper": "aside",
+          "content": [
+            "<a href=https://google.com.mx target=_blank ><Icons icon=linkedin ></Icons></a>",
+            "<a href=https://google.com.mx target=_blank ><Icons icon=facebook ></Icons></a>",
+            "<a href=https://google.com.mx target=_blank ><Icons icon=twitter ></Icons></a>",
+            "<a href=https://google.com.mx target=_blank ><Icons icon=chain ></Icons></a>",
+            "<a href=https://google.com.mx target=_blank ><Icons icon=printer ></Icons></a>"
+          ]
         },
         {
-          "name": "articles",
+          "name": "articlesContainer",
           "classes": "",
-          "content": "nana"
+          "content": {
+            "articlesError": {
+              "tag": "span",
+              "content": [
+                "<Icons icon=bug > </Icons>",
+                "<b class='fs-4'> !!!</b>"
+              ]
+            },
+            "articlesLoading": {
+              "component": "Icons",
+              "icon": "spinner",
+              "classes": "spinner"
+            },
+            "articles": {
+              "name": "articles"
+            }
+          }
         },
         {
-          "name": "links",
-          "classes": "",
-          "content": "nana"
+          "name": "otherLinks",
+          "component": "ListContainer",
+          "classes": "list-unstyled",
+          "liClasses": "mb-2",
+          "wrapper": "aside",
+          "content": [
+            "<p class=fw-bold >More information for you</p>",
+            "<a href=https://google.com.mx target=_blank class='btn btn-outline-primary rounded-pill px-4'>Canada Work visas & permits ></a>",
+            "<a href=https://google.com.mx target=_blank class='btn btn-outline-primary rounded-pill px-4'>Hiring in Canada ></a>",
+            "<a href=https://google.com.mx target=_blank class='btn btn-outline-primary rounded-pill px-4'>Employee benefits in Canada ></a>",
+            "<a href=https://google.com.mx target=_blank class='btn btn-outline-primary rounded-pill px-4'>Canada Payroll ></a>",
+            "<a href=https://google.com.mx target=_blank class='btn btn-outline-primary rounded-pill px-4'>Canada subsidiary ></a>"
+          ]
         }
       ]
     }
@@ -201,6 +247,7 @@
             "name": "howItWorksF",
             "component": "ListContainer",
             "classes": "list-unstyled",
+            "wrapper": "nav",
             "content": [
               "<b class='nav-link'>How it works</b>",
               "<a href='https://google.com.mx' class='nav-link'>Employees</a>",
@@ -213,6 +260,7 @@
             "name": "resourcesF",
             "component": "ListContainer",
             "classes": "list-unstyled",
+            "wrapper": "nav",
             "content": [
               "<b class='nav-link'>Resources</b>",
               "<a href='https://google.com.mx' class='nav-link'>Countries</a>"
@@ -222,6 +270,7 @@
             "name": "aboutUsF",
             "component": "ListContainer",
             "classes": "list-unstyled",
+            "wrapper": "nav",
             "content": [
               "<b class='nav-link'>About us</b>",
               "<a href='https://google.com.mx' class='nav-link'>About us</a>",
@@ -232,6 +281,7 @@
             "name": "pricingF",
             "component": "ListContainer",
             "classes": "list-unstyled",
+            "wrapper": "nav",
             "content": [
               "<b class='nav-link'>Pricing</b>",
               "<a href='https://google.com.mx' class='nav-link'>Pricing</a>"
@@ -241,6 +291,7 @@
             "name": "followUs",
             "component": "ListContainer",
             "classes": "list-unstyled",
+            "wrapper": "nav",
             "content": [
               "<b class='nav-link'>Follow Us</b>",
               "<a href='https://google.com.mx' class='nav-link'>Subscribe by email</a>",
@@ -249,6 +300,66 @@
           }
         ]
       }
+    ]
+  },
+  "menuMobileModal": {
+    "component": "ModalContainer",
+    "classes": "nav-secondary py-items-0",
+    "modalClasses": "modal-dialog-scrollable",
+    "showClose": true,
+    "content": [
+      {
+        "name": "howItWorksF",
+        "component": "ListContainer",
+        "classes": "list-unstyled",
+        "liClasses": "nav-item",
+        "wrapper": "nav",
+        "content": [
+          "<b class='nav-link'>How it works</b>",
+          "<a href='https://google.com.mx' class='nav-link'>Employees</a>",
+          "<a href='https://google.com.mx' class='nav-link'>Contractors</a>",
+          "<a href='https://google.com.mx' class='nav-link'>Global benefits</a>",
+          "<a href='https://google.com.mx' class='nav-link'>Legal & Compliance</a>"
+        ]
+      },
+      {
+        "name": "resourcesF",
+        "component": "ListContainer",
+        "classes": "list-unstyled",
+        "wrapper": "nav",
+        "liClasses": "nav-item",
+        "content": [
+          "<b class='nav-link'>Resources</b>",
+          "<a href='https://google.com.mx' class='nav-link'>Countries</a>"
+        ]
+      },
+      {
+        "name": "aboutUsF",
+        "component": "ListContainer",
+        "classes": "list-unstyled",
+        "liClasses": "nav-item",
+        "wrapper": "nav",
+        "content": [
+          "<b class='nav-link'>About us</b>",
+          "<a href='https://google.com.mx' class='nav-link'>About us</a>",
+          "<a href='https://google.com.mx' class='nav-link'>Careers</a>"
+        ]
+      },
+      {
+        "name": "pricingF",
+        "component": "ListContainer",
+        "classes": "list-unstyled",
+        "liClasses": "nav-item",
+        "wrapper": "nav",
+        "content": [
+          "<b class='nav-link'>Pricing</b>",
+          "<a href='https://google.com.mx' class='nav-link'>Pricing</a>"
+        ]
+      },
+      "<hr/>",
+      "Login",
+      "<br/>",
+      "Contact Us"
     ]
   }
 }

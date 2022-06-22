@@ -4333,9 +4333,9 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-dbl-components@^1.2.44:
-  version "1.2.44"
-  resolved "https://registry.yarnpkg.com/dbl-components/-/dbl-components-1.2.44.tgz#91b071539ae203a1df823b9b4ce312c13f8b9a88"
+dbl-components@^1.2.45:
+  version "1.2.45"
+  resolved "https://registry.yarnpkg.com/dbl-components/-/dbl-components-1.2.45.tgz#91b071539ae203a1df823b9b4ce312c13f8b9a88"
   integrity sha512-ocLaqRLgbz+09crSaQYXow4umuHpRFGU0CGpj0q1j+J1LhMihFPVBFJ3BEFFapx05D35y3FNDP8K4oHZnI4GNg==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
@@ -8254,7 +8254,7 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-moment@^2.29.1:
+moment@^2.29.1, moment@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
   integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
