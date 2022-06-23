@@ -181,6 +181,14 @@
           "name": "articlesContainer",
           "classes": "",
           "content": {
+            "articlesContainerAnchor": {
+              "name": "acAnchor",
+              "tag": "div",
+              "style": {
+                "width": 1,
+                "height": 0
+              }
+            },
             "articlesError": {
               "tag": "span",
               "content": [
@@ -188,13 +196,17 @@
                 "<b class='fs-4'> !!!</b>"
               ]
             },
+            "articles": {
+              "name": "articles"
+            },
             "articlesLoading": {
               "component": "Icons",
               "icon": "spinner",
               "classes": "spinner"
             },
-            "articles": {
-              "name": "articles"
+            "pagination": {
+              "component": "PaginationField",
+              "paginationClasses": "justify-content-center"
             }
           }
         },

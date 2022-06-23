@@ -10,6 +10,7 @@
     "bootstrap": "^5.1.3",
     "dbl-components": "^1.2.45",
     "moment": "^2.29.3",
+    "qs": "^6.10.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.3.0",

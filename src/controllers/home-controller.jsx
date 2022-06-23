@@ -1,4 +1,5 @@
 import moment from "moment";
+import qs from "qs";
 
 import Controller from "dbl-components/lib/js/views/view";
 import eventHandler from "dbl-components/lib/js/functions/event-handler";
@@ -12,12 +13,14 @@ export default class extends Controller {
   constructor(props) {
     super(props);
     this.events = [
-      ['menuMobile', this.onMenuMobile]
+      ['menuMobile', this.onMenuMobile],
+      ['pagination', this.onPagination]
     ];
     Object.assign(this.state, {
       articlesError: { active: false },
       articlesLoading: { active: false },
-      articles: []
+      articles: [],
+      pageSize: 3
     });
   }
 
@@ -26,23 +29,40 @@ export default class extends Controller {
     this.getData();
   }
 
-  async getData() {
+  async getData(page = 1) {
     this.setState({ articlesLoading: { active: true } });
-    const payload = await fetch(endpoint).then(r => r.json());
+    const query = qs.stringify({ pagination: { page, pageSize: this.state.pageSize } });
+    const payload = await fetch(`${endpoint}?${query}`).then(r => r.json());
     const newState = { articlesLoading: { active: false } };
     if (!payload.data) newState.articlesError = { active: true };
-    else newState.articles = payload.data.map((a, i) => ({
-      name: 'article' + a.id,
-      component: 'Article',
-      title: a.attributes.Title,
-      subtitle: 'Published at ' + moment(a.attributes.publishedAt).format('DD/MMM/YYYY'),
-      excerpt: a.attributes.Post
-    }));
+    else {
+      newState.articles = payload.data.map((a, i) => ({
+        name: 'article' + a.id,
+        component: 'Article',
+        title: a.attributes.Title,
+        subtitle: 'Published at ' + moment(a.attributes.publishedAt).format('DD/MMM/YYYY'),
+        excerpt: a.attributes.Post
+      }));
+      newState.total = Math.ceil(payload.meta.pagination.total / this.state.pageSize);
+      eventHandler.dispatch('update.pagination', { total: newState.total });
+    }
     this.setState(newState);
+    return !!payload.data;
   }
 
   onMenuMobile = () => {
     eventHandler.dispatch('update.menuMobileModal', { open: true });
+  }
+
+  onPagination = async ({ pagination }) => {
+    await this.getData(pagination);
+    setTimeout(() => {
+      const e = document.querySelector('#acAnchor');
+      e.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 100);
   }
 
   /**
@@ -58,7 +78,7 @@ export default class extends Controller {
         return {
           classes: ['xs', 'sm'].includes(this.breakpoint) ?
             'align-items-center justify-content-between py-2 shadow-sm nav-secondary sticky-top bg-white' :
-            'align-items-center justify-content-between py-2 px-4 shadow-sm nav-secondary sticky-top bg-white'
+            'align-items-center justify-content-between py-2 shadow-sm nav-secondary sticky-top bg-white px-4'
         };
       case 'logo':
         return ['xs', 'sm'].includes(this.breakpoint) ?
@@ -70,6 +90,11 @@ export default class extends Controller {
         return { active: !['xs', 'sm'].includes(this.breakpoint) };
       case 'menuMobile':
         return { active: ['xs', 'sm'].includes(this.breakpoint) };
+      case 'pagination':
+        return {
+          active: !!this.state.articles?.length,
+          total: this.state.total
+        }
       default:
         break;
     }
